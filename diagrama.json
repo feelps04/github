@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Feelps_04",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 14.3, "left": 81.4, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -111.2, "left": 2.22, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir2",
+      "top": -101.6,
+      "left": -208.98,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -90, "left": 109.4, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "v126.07", "h107.64" ] ],
+    [ "pir1:VCC", "esp:VIN", "red", [ "v136.73", "h131.77" ] ],
+    [ "pir1:OUT", "esp:D15", "green", [ "v188.73", "h238.03", "v-71.33" ] ],
+    [ "pir2:GND", "esp:GND.2", "black", [ "v126.07", "h107.64" ] ],
+    [ "pir2:VCC", "esp:VIN", "red", [ "v136.73", "h131.77" ] ],
+    [ "pir2:OUT", "esp:D14", "green", [ "v188.73", "h238.03", "v-71.33" ] ],
+    [ "led1:A", "esp:D13", "green", [ "v75.66", "h50.7" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v84.33", "h58.7" ] ]
+  ],
+  "dependencies": {}
+}
